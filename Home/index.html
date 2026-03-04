@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>premDev!</title>
+    <script src="dat.gui.min.js"></script>
+    <link rel="icon" href="./home.svg">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwsome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            user-select: none;
+
+        }
+
+        html,
+        body {
+            /* overflow: hidden; */
+            background-color: #ffffff;
+            background: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        body {
+            margin: 0;
+            /* position: fixed; */
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .dg.ac {
+            display: none;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+    <script>
+        window.ga =
+            window.ga ||
+            function () {
+                (ga.q = ga.q || []).push(arguments);
+            };
+        ga.l = +new Date();
+        ga('create', 'UA-105392568-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="loader.js"></script>
+</head>
+
+<body>
+
+    <!-- Background Canvas -->
+    <canvas id="canvas"></canvas>
+    <div class="board">
+        <span class="board-close">&times;</span>
+    </div>
+    <!-- ---------------------------- -->
+
+
+    <!-- P Body -->
+    <div class="ui" id="me">
+
+        <div class="head">
+            <div class="h-one">
+                <h5>Hey, I'm Prem 👋</h5>
+            </div>
+            <div class="h-two">
+                <h1>Aspiring Programmer</h1>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="my.png">
+        </div>
+
+
+        <div class="quote">
+            <button class="liquid-btn">
+                <code>Sacrifice your pleasure leads to success</code>
+                <svg class="shine" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="glassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="white" stop-opacity="0.7" />
+                            <stop offset="100%" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#glassGradient)" />
+                </svg>
+            </button>
+        </div>
+
+
+        <div class="task-bar">
+            <div class="data1 me"><i class="fa-regular fa-face-laugh" style="color: #5541ab;"></i>
+                <p>Me</p>
+            </div>
+            <div class="data2 projects"><i class="fa-solid fa-briefcase" style="color: #5541ab;"></i>
+                <p>Projects</p>
+            </div>
+            <div class="data3 skills"><i class="fa-solid fa-layer-group" style="color: #5541ab;"></i>
+                <p>Skills</p>
+            </div>
+            <div class="data4 contact">
+                <i class="fa-regular fa-circle-user" style="color: #5541ab;"></i>
+                <p>Contact</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="click.js"> </script>
+
+    <!-- Canvas Script 2 -->
+    <script src="script.js"></script>
+    <!-- ----------- -->
+
+</body>
+
+</html>
