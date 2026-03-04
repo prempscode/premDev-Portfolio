@@ -1,6 +1,20 @@
-/* Project seciton */
+/* Project section */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+}
+
 .projects {
     text-align: center;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .projects h2 {
@@ -10,81 +24,94 @@
 }
 
 /* grid */
-
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
 }
 
 /* card */
-
 .project-card {
-
-    height: 240px;
-
-    padding: 30px;
+    height: auto;
+    min-height: 220px;
+    padding: 24px;
     border-radius: 20px;
-
     background: linear-gradient(180deg,
             #ffffff 0%,
             #f4f4f4 70%,
             #d6c7f0 100%);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08);
-
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: left;
-
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* tag */
-
 .tag {
-    font-size: 14px;
+    font-size: 13px;
     color: #888;
 }
 
 /* title */
-
 .project-card h3 {
-    margin-top: 10px;
-    font-size: 26px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 22px;
     font-weight: 600;
 }
 
-/* bottom text */
+/* image */
+.project-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
 
+/* bottom text */
 .project-text {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 40px;
+    margin-top: 36px;
     color: #666;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-/* image */
-.project-card img{
-    width: 100%;
-    height: 140px;
-
-    object-fit: cover;
-
-    border-radius: 12px;
-/* 
-    margin-top: 15px; */
-    margin-bottom: 15px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    line-height: 1.6;
+    padding: 0 10px;
 }
 
-.project-card{
-cursor:pointer;
+/* ── Responsive ── */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 14px;
+    }
+
+    .projects h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .project-card img {
+        height: 160px;
+    }
 }
