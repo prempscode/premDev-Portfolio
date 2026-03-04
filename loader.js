@@ -1,6 +1,4 @@
 // ── premDev Page Loader ──
-// Shows a loading screen on every page load/reload/navigation
-
 (function () {
     var LOADER_STYLES = `
         #prem-loader {
@@ -24,10 +22,10 @@
     `;
 
     function createLoader() {
+        if (document.getElementById('prem-loader')) return document.getElementById('prem-loader');
         var style = document.createElement('style');
         style.textContent = LOADER_STYLES;
         document.head.appendChild(style);
-
         var el = document.createElement('div');
         el.id = 'prem-loader';
         el.innerHTML =
@@ -38,38 +36,33 @@
         return el;
     }
 
+    function resetBar(loader) {
+        var bar = loader.querySelector('.prem-loader-bar');
+        if (bar) {
+            bar.style.animation = 'none';
+            bar.offsetHeight; // force reflow
+            bar.style.animation = '';
+        }
+        loader.style.transition = 'none';
+        loader.style.opacity = '1';
+        loader.classList.remove('fade-out');
+    }
+
     function dismissLoader(loader) {
+        loader.style.transition = 'opacity 0.5s ease';
         loader.classList.add('fade-out');
         setTimeout(function () { if (loader.parentNode) loader.remove(); }, 550);
     }
 
-    // Show loader again whenever we leave (reload, btn click, back/forward)
-    window.addEventListener('beforeunload', function () {
-        var existing = document.getElementById('prem-loader');
-        if (existing) {
-            existing.style.transition = 'none';
-            existing.style.opacity = '1';
-            existing.classList.remove('fade-out');
-            // reset the bar animation
-            var bar = existing.querySelector('.prem-loader-bar');
-            if (bar) { bar.style.animation = 'none'; bar.offsetHeight; bar.style.animation = ''; }
-        } else {
-            createLoader();
-        }
-    });
-
-    // On DOMContentLoaded, inject loader and decide when to hide it
-    document.addEventListener('DOMContentLoaded', function () {
-        var loader = createLoader();
-        var isHome = !!document.getElementById('canvas'); // only index has WebGL canvas
-
+    function startDismissTimer() {
+        var loader = document.getElementById('prem-loader');
+        if (!loader) return;
+        var isHome = !!document.getElementById('canvas');
         if (isHome) {
-            // Wait for WebGL to fully warm up (~30 frames ≈ 0.5s)
             var frameCount = 0;
-            var MIN_FRAMES = 30;
             function waitForGL() {
                 frameCount++;
-                if (frameCount >= MIN_FRAMES) {
+                if (frameCount >= 30) {
                     dismissLoader(loader);
                 } else {
                     requestAnimationFrame(waitForGL);
@@ -77,10 +70,30 @@
             }
             requestAnimationFrame(waitForGL);
         } else {
-            // Subpages have no WebGL — hide after window fully loads
-            window.addEventListener('load', function () {
-                setTimeout(function () { dismissLoader(loader); }, 300);
-            });
+            setTimeout(function () { dismissLoader(loader); }, 500);
         }
+    }
+
+    // ── Handle bfcache (back/forward navigation) ──
+    // When browser restores a frozen page, pageshow fires with persisted=true
+    window.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+            // Page was restored from bfcache — show loader then dismiss
+            var loader = createLoader();
+            resetBar(loader);
+            startDismissTimer();
+        }
+    });
+
+    // Show loader on leaving
+    window.addEventListener('beforeunload', function () {
+        var loader = createLoader();
+        resetBar(loader);
+    });
+
+    // Normal page load
+    document.addEventListener('DOMContentLoaded', function () {
+        var loader = createLoader();
+        startDismissTimer();
     });
 })();
