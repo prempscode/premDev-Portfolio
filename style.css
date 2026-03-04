@@ -9,10 +9,12 @@
     justify-content: flex-start;
     margin-top: 15px;
     height: 100vh;
+    height: 100dvh; /* dynamic viewport — accounts for mobile browser address bar */
     text-align: center;
     pointer-events: none;
-    padding: 0 16px;
+    padding: 0 16px 10px 16px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* Enable interaction only for UI elements */
@@ -187,5 +189,40 @@
 
     .task-bar p {
         font-size: 11px;
+    }
+}
+
+/* Very short screens (small phones, landscape) */
+@media (max-height: 680px) {
+    .h-two h1 {
+        font-size: 26px;
+    }
+
+    .image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image {
+        margin: 8px 0;
+    }
+
+    .quote {
+        margin-top: 8px;
+    }
+
+    .liquid-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .task-bar {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .task-bar div {
+        width: 68px;
+        height: 56px;
     }
 }
