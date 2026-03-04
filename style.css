@@ -1,4 +1,4 @@
-
+/* UI Layer above fluid canvas */
 
 .ui {
     position: relative;
@@ -15,7 +15,7 @@
     box-sizing: border-box;
 }
 
-
+/* Enable interaction only for UI elements */
 .ui button,
 .ui input,
 .ui .task-bar div {
@@ -122,9 +122,9 @@
     opacity: 0.4;
 }
 
-/*responsive*/
+/* ── Responsive ── */
 
-/* tablet */
+/* Tablet */
 @media (max-width: 768px) {
     .h-two h1 {
         font-size: 38px;
@@ -141,7 +141,7 @@
     }
 }
 
-/* mobile */
+/* Mobile */
 @media (max-width: 480px) {
     .ui {
         margin-top: 10px;

@@ -69,6 +69,14 @@
         ga('send', 'pageview');
     </script>
     <script src="loader.js"></script>
+    <script>
+        // WebGL cannot resume from bfcache — force a real reload when restored
+        window.addEventListener('pageshow', function (e) {
+            if (e.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body>
