@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { portfolioData } from '../data/portfolio'
+import { motion } from "framer-motion";
+import { portfolioData } from "../data/portfolio";
 
 const Experience = () => {
   return (
@@ -36,15 +35,23 @@ const Experience = () => {
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-10 h-10 border border-border-light rounded flex items-center justify-center flex-shrink-0">
-                  <span className="font-mono text-sm font-bold text-white">{exp.company.charAt(0)}</span>
+                  <span className="font-mono text-sm font-bold text-white">
+                    {exp.company.charAt(0)}
+                  </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white tracking-wide">{exp.company.toUpperCase()}</h3>
-                  <p className="font-mono text-xs text-accent tracking-wider mt-0.5">{exp.position.toUpperCase()}</p>
+                  <h3 className="text-lg font-bold text-white tracking-wide">
+                    {exp.company.toUpperCase()}
+                  </h3>
+                  <p className="font-mono text-xs text-accent tracking-wider mt-0.5">
+                    {exp.position.toUpperCase()}
+                  </p>
                 </div>
               </div>
 
-              <p className="font-mono text-xs text-accent-light mb-4">{exp.duration}</p>
+              <p className="font-mono text-xs text-accent-light mb-4">
+                {exp.duration}
+              </p>
 
               <p className="text-muted-light text-sm mb-4 leading-relaxed">
                 <span className="text-accent">&gt;</span> {exp.summary}
@@ -52,8 +59,13 @@ const Experience = () => {
 
               <ul className="space-y-2">
                 {exp.bullets.map((bullet, i) => (
-                  <li key={i} className="text-muted text-sm leading-relaxed flex gap-2">
-                    <span className="text-accent mt-1 flex-shrink-0 text-xs">-</span>
+                  <li
+                    key={i}
+                    className="text-muted text-sm leading-relaxed flex gap-2"
+                  >
+                    <span className="text-accent mt-1 flex-shrink-0 text-xs">
+                      -
+                    </span>
                     {bullet}
                   </li>
                 ))}
@@ -63,7 +75,7 @@ const Experience = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

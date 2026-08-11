@@ -1,6 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { portfolioData } from '../data/portfolio'
+import { motion } from "framer-motion";
+import { portfolioData } from "../data/portfolio";
 
 const Education = () => {
   return (
@@ -33,14 +32,16 @@ const Education = () => {
               viewport={{ once: true }}
               className="border-l-2 border-accent pl-8 py-2"
             >
-              <h3 className="text-xl font-bold text-white mb-1">{edu.school}</h3>
+              <h3 className="text-xl font-bold text-white mb-1">
+                {edu.school}
+              </h3>
               <p className="text-muted">{edu.degree}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;

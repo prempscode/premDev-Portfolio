@@ -1,4 +1,3 @@
-import React from "react";
 import { portfolioData } from "../data/portfolio";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 

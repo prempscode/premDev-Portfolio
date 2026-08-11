@@ -1,7 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { portfolioData } from '../data/portfolio'
-import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
+import { motion } from "framer-motion";
+import { portfolioData } from "../data/portfolio";
+import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 
 const Projects = () => {
   return (
@@ -35,10 +34,11 @@ const Projects = () => {
               transition={{ delay: index * 0.1 }}
               className="group relative bg-card border border-border rounded-xl p-8 hover:border-accent/50 transition-all duration-300"
             >
-              {/* Blue right border on hover */}
               <div className="absolute right-0 top-4 bottom-4 w-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <p className="font-mono text-xs text-accent mb-4">[{project.id}]</p>
+              <p className="font-mono text-xs text-accent mb-4">
+                [{project.id}]
+              </p>
 
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
                 {project.name}
@@ -64,7 +64,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
