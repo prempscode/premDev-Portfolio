@@ -42,7 +42,6 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <motion.a
             href="#"
             className="flex items-center gap-2 font-mono text-sm tracking-wider text-white"
@@ -53,9 +52,7 @@ const Navbar = () => {
             <span>{portfolioData.name.replace(/\s/g, "_").toUpperCase()}</span>
           </motion.a>
 
-          {/* Desktop: Nav Links + Social + Contact */}
           <div className="hidden md:flex items-center gap-6">
-            {/* Social Icons in bordered boxes */}
             <div className="flex items-center gap-3">
               {socialIcons.map(({ icon: Icon, href, label }) => (
                 <a
@@ -71,16 +68,14 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Contact Button */}
             <a
-              href={`mailto:${portfolioData.email}`}
+              href={"#contact"}
               className="font-mono text-xs tracking-wider text-white border border-border-light rounded px-4 py-2 hover:border-accent hover:text-accent transition-all"
             >
               [ CONTACT ]
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
@@ -89,7 +84,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Desktop Nav Links (below logo/social row) */}
         <div className="hidden md:flex items-center gap-8 pb-3 -mt-1">
           {navLinks.map((link) => (
             <a

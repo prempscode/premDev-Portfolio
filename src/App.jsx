@@ -6,6 +6,7 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Education />
         <Experience />
         <Projects />
+        <ContactForm />
       </main>
       <Footer />
     </div>
