@@ -61,6 +61,34 @@ export const portfolioData = {
       degree: "Bachelor of Computer Applications",
     },
   ],
+  // academics
+  academics: {
+    degree: "BCA",
+    cgpa: 9.81,
+    years: [
+      {
+        year: 1,
+        semesters: [
+          { sem: 1, sgpa: 9.8 },
+          { sem: 2, sgpa: 9.5 },
+        ],
+      },
+      {
+        year: 2,
+        semesters: [
+          { sem: 3, sgpa: 10 },
+          { sem: 4, sgpa: 9.91 },
+        ],
+      },
+      {
+        year: 3,
+        semesters: [
+          { sem: 5, sgpa: "soon" },
+          { sem: 6, sgpa: "soon" },
+        ],
+      },
+    ],
+  },
 
   // Experience
   experience: [

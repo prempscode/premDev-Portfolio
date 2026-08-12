@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import WhatIDo from "./components/WhatIDo";
 import Proficiency from "./components/Proficiency";
 import Education from "./components/Education";
+import Academics from "./components/Academics";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ function App() {
         <WhatIDo />
         <Proficiency />
         <Education />
+        <Academics />
         <Experience />
         <Projects />
         <ContactForm />
