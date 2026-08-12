@@ -28,6 +28,8 @@ const CountUp = ({ end, suffix = "" }) => {
 };
 
 const Hero = () => {
+  const [isHiHovered, setIsHiHovered] = useState(false);
+
   return (
     <section className="min-h-screen flex items-center bg-dark pt-28 pb-16 px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto w-full">
@@ -45,10 +47,16 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]"
+              onMouseEnter={() => setIsHiHovered(true)}
+              onMouseLeave={() => setIsHiHovered(false)}
+              style={{
+                fontFamily: isHiHovered ? "AMSKartik" : "inherit",
+              }}
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1] inline-block cursor-pointer transition-all duration-300"
             >
-              HI ALL,
+              {isHiHovered ? "नमस्ते," : "HI ALL,"}
             </motion.h1>
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

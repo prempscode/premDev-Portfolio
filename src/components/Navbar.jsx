@@ -15,11 +15,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "What I Do", href: "#what-i-do" },
-    { name: "Proficiency", href: "#proficiency" },
-    { name: "Education", href: "#education" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
+    { name: "What I Do", href: "/what-i-do" },
+    { name: "Proficiency", href: "/proficiency" },
+    { name: "Education", href: "/education" },
+    { name: "Experience", href: "/experience" },
+    { name: "Projects", href: "/projects" },
   ];
 
   const socialIcons = [
@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.a
-            href="#"
+            href="/"
             className="flex items-center gap-2 font-mono text-sm tracking-wider text-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,7 +69,7 @@ const Navbar = () => {
             </div>
 
             <a
-              href={"#contact"}
+              href={"/contact"}
               className="font-mono text-xs tracking-wider text-white border border-border-light rounded px-4 py-2 hover:border-accent hover:text-accent transition-all"
             >
               [ CONTACT ]

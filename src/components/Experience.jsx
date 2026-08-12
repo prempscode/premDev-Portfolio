@@ -18,7 +18,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-black text-white mb-16"
+          className="text-4xl md:text-5xl font-black text-white mb-16 bg-blue-600  inline-block"
         >
           EXPERIENCE.
         </motion.h2>
