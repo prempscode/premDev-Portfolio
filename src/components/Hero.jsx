@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
+import "../index.css";
 
 const CountUp = ({ end, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -45,7 +46,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1] bg-blue-600  inline-block"
+              className=" hover-effect text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]  "
             >
               HI ALL,
             </motion.h1>

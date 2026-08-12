@@ -52,7 +52,7 @@ const ContactForm = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-black text-white mb-12 bg-blue-600 inline-block"
+          className=" hover-effect text-4xl md:text-5xl font-black text-white mb-12 "
         >
           CONTACT.
         </motion.h2>

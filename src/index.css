@@ -43,3 +43,28 @@ body {
   background: #3b82f6;
   color: #ffffff;
 }
+
+.hover-effect {
+  display: inline-block;
+  padding: 2px 4px;
+  cursor: pointer;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(37, 99, 235) 50%,
+    transparent 50%
+  );
+
+  background-size: 200% 100%;
+
+  background-position: right bottom;
+
+  transition:
+    background-position 0.2s ease-out,
+    color 0.4s ease-out;
+}
+
+.hover-effect:hover {
+  background-position: left bottom;
+  color: white;
+}
