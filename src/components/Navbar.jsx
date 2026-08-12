@@ -15,11 +15,12 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "What I Do", href: "/what-i-do" },
-    { name: "Proficiency", href: "/proficiency" },
-    { name: "Education", href: "/education" },
-    { name: "Experience", href: "/experience" },
-    { name: "Projects", href: "/projects" },
+    { name: "What I Do", href: "#what-i-do" },
+    { name: "Proficiency", href: "#proficiency" },
+    { name: "Education", href: "#education" },
+    { name: "Academics", href: "#academics" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
   ];
 
   const socialIcons = [
