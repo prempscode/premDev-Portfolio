@@ -41,14 +41,14 @@ const Hero = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            {/* <motion.h1
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1] bg-blue-600  inline-block"
             >
               HI ALL,
-            </motion.h1> */}
+            </motion.h1>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
