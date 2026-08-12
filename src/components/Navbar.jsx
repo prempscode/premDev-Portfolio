@@ -70,7 +70,7 @@ const Navbar = () => {
             </div>
 
             <a
-              href={"/contact"}
+              href={"#contact"}
               className="font-mono text-xs tracking-wider text-white border border-border-light rounded px-4 py-2 hover:border-accent hover:text-accent transition-all"
             >
               [ CONTACT ]
