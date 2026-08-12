@@ -43,10 +43,3 @@ body {
   background: #3b82f6;
   color: #ffffff;
 }
-
-@font-face {
-  font-family: "AMSKartik";
-  src: url("./assets/fonts/AMS-Kartik\ .ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
