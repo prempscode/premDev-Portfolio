@@ -9,6 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "imports": {
+  "#components/*": "./src/components/*",
+  "#lib/*": "./src/lib/*",
+  "#hooks/*": "./src/hooks/*"
+},
   "dependencies": {
     "dotenv": "^17.4.2",
     "framer-motion": "^13.1.0",
