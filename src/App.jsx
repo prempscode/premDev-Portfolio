@@ -11,19 +11,21 @@ import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
-    <div className="min-h-screen bg-dark text-white grid-bg">
-      <Navbar />
-      <main>
-        <Hero />
-        <WhatIDo />
-        <Proficiency />
-        <Education />
-        <Academics />
-        <Experience />
-        <Projects />
-        <ContactForm />
-      </main>
-      <Footer />
+    <div className="relative min-h-screen bg-[#0a0a0f] text-white">
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <WhatIDo />
+          <Proficiency />
+          <Education />
+          <Academics />
+          <Experience />
+          <Projects />
+          <ContactForm />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
