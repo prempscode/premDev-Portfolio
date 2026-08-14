@@ -44,7 +44,7 @@ const Experience = () => {
               playOnce={false}
             >
               <motion.div
-                onClick={window.open(exp.link, "_blank")}
+                onClick={() => window.open(exp.link, "_blank")}
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

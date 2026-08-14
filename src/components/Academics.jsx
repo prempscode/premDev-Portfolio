@@ -32,7 +32,7 @@ const Academics = () => {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <div className="inline-flex items-baseline gap-3 border-l-2 border-accent pl-8">
+          <div className="cursor-target inline-flex items-baseline gap-3 border-l-2 border-accent pl-8">
             <span className="text-muted font-mono text-sm tracking-widest uppercase">
               CGPA
             </span>
@@ -45,6 +45,14 @@ const Academics = () => {
 
         {/* Year-wise Grid */}
         <div className="grid gap-8 md:grid-cols-3">
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor
+            parallaxOn
+            hoverDuration={0.2}
+            cursorColor="#ffffff"
+            cursorColorOnTarget="#ffffff"
+          />
           {academics.years.map((yr, i) => (
             <motion.div
               key={yr.year}
@@ -52,7 +60,7 @@ const Academics = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="border border-white/10 rounded-lg p-6 bg-white/[0.02]"
+              className="cursor-target border border-white/10 rounded-lg p-6 bg-white/[0.02]"
             >
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
