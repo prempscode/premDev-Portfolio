@@ -12,7 +12,7 @@ const Experience = () => {
           viewport={{ once: true }}
           className="font-mono text-xs text-accent tracking-[0.3em] mb-4"
         >
-          // SECTION_05
+          // SECTION_06
         </motion.p>
 
         <motion.h2

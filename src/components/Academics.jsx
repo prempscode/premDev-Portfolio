@@ -13,7 +13,7 @@ const Academics = () => {
           viewport={{ once: true }}
           className="font-mono text-xs text-accent tracking-[0.3em] mb-4"
         >
-          // SECTION_04.5
+          // SECTION_05
         </motion.p>
 
         <motion.h2

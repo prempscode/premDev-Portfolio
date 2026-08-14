@@ -44,7 +44,7 @@ const ContactForm = () => {
           viewport={{ once: true }}
           className="font-mono text-xs text-accent tracking-[0.3em] mb-4"
         >
-          // SECTION_06
+          // SECTION_09
         </motion.p>
 
         {/* Heading */}
