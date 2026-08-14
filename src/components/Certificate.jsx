@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
 import GlareHover from "./ui/GlareHover";
+import TargetCursor from "./ui/TargetCursor";
 
 const Certificate = () => {
   return (
@@ -25,6 +26,14 @@ const Certificate = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor
+            parallaxOn
+            hoverDuration={0.2}
+            cursorColor="#ffffff"
+            cursorColorOnTarget="#3B82F6"
+          />
           {portfolioData.certificates.map((certificate, index) => (
             <GlareHover
               key={index}
@@ -40,7 +49,7 @@ const Certificate = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300 h-full"
+                className="cursor-target bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300 h-full"
               >
                 {/* Company Header */}
                 <div className="flex items-start gap-4 mb-5">
@@ -53,7 +62,7 @@ const Certificate = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-white tracking-wide">
+                    <h3 className="cursor-target text-lg font-bold text-white tracking-wide">
                       {certificate.company.toUpperCase()}
                     </h3>
 
@@ -91,12 +100,11 @@ const Certificate = () => {
                   ))}
                 </ul>
 
-                {/* View Certificate */}
                 <a
                   href={certificate.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border-light rounded px-4 py-2 font-mono text-xs text-white hover:border-accent hover:text-accent transition-all duration-300"
+                  className=" cursor-target inline-flex items-center gap-2 border border-border-light rounded px-4 py-2 font-mono text-xs text-white hover:border-accent hover:text-accent transition-all duration-300"
                 >
                   VIEW CERTIFICATE
                   <span className="text-accent">↗</span>
