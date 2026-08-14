@@ -96,6 +96,7 @@ export const portfolioData = {
   // Experience
   experience: [
     {
+      link: "https://www.linkedin.com/posts/prem-pravash-sahu-6392b4334_internshipcompletion-webdevelopment-frontenddeveloper-activity-7370058776030126081-3lTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFQMsY0BeRgUlYBYwgDFUU3Aem0cOaqEqgA",
       company: "NativeSoftTech",
       position: "Learning Intern",
       duration: "August 2025 - September 2025",

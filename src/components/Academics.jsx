@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
+import TargetCursor from "./ui/TargetCursor";
 
 const Academics = () => {
   const { academics } = portfolioData;
