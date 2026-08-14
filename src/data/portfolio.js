@@ -1,3 +1,6 @@
+import deloitteLogo from "/assets/certificates/deloitte.jpeg";
+import mastercardLogo from "/assets/certificates/mastercard.png";
+
 export const portfolioData = {
   // Hero
   name: "Prem",
@@ -143,14 +146,30 @@ export const portfolioData = {
   ],
   certificates: [
     {
+      skills: ["Log Analysis", "Web Security"],
+      logo: deloitteLogo,
+      data: [
+        "Completed a job simulation involving reading web activity logs",
+        "Supported a client in a cyber security breach",
+        "Answered questions to identify suspicious user activity",
+      ],
+      link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_6a2a919dd12437d79007a79f_1786368907399_completion_certificate.pdf",
       tag: "job-simulation",
       via: "forge",
-      comapany : "Deloitte"
+      company: "Deloitte",
     },
     {
+      skills: ["SECURITY AWARENESS", "SECURITY TRAINING"],
+      logo: mastercardLogo,
+      data: [
+        "Completed a job simulation where I served as an analyst on Mastercard’s Security Awareness Team",
+        "Helped identify and report security threats such as phishing",
+        "Analyzed and identified which areas of the business needed more robust security training and implemented training courses and procedures for those teams",
+      ],
+      link: "https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_6a2a919dd12437d79007a79f_1786366882579_completion_certificate.pdf",
       tag: "job-simulation",
       via: "forge",
-      company : "mastercard"
+      company: "mastercard",
     },
   ],
   // Social

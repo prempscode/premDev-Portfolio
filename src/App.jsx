@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import FerrofluidBackground from "./components/FerrofluidBackground";
+import Certificate from "./components/Certificate";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Education />
           <Academics />
           <Experience />
+          <Certificate/>
           <Projects />
           <ContactForm />
 

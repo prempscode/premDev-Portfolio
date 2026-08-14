@@ -4,7 +4,7 @@ import GlareHover from "./ui/GlareHover";
 
 const Certificate = () => {
   return (
-    <section id="experience" className="py-24 bg-darker px-6 lg:px-8">
+    <section id="certificates" className="py-24 bg-darker px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
@@ -12,21 +12,22 @@ const Certificate = () => {
           viewport={{ once: true }}
           className="font-mono text-xs text-accent tracking-[0.3em] mb-4"
         >
-          // SECTION_05
+          // SECTION_06
         </motion.p>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className=" hover-effect text-4xl md:text-5xl font-black text-white mb-16 "
+          className="hover-effect text-4xl md:text-5xl font-black text-white mb-16"
         >
-          EXPERIENCE.
+          CERTIFICATES.
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {portfolioData.experience.map((exp, index) => (
+          {portfolioData.certificates.map((certificate, index) => (
             <GlareHover
+              key={index}
               glareColor="#ffffff"
               glareOpacity={0.3}
               glareAngle={-30}
@@ -35,50 +36,71 @@ const Certificate = () => {
               playOnce={false}
             >
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300"
+                className="bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300 h-full"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 border border-border-light rounded flex items-center justify-center flex-shrink-0">
-                    <span className="font-mono text-sm font-bold text-white">
-                      {exp.company.charAt(0)}
-                    </span>
+                {/* Company Header */}
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-10 h-10 border border-border-light rounded flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <img
+                      src={certificate.logo}
+                      alt={`${certificate.company} logo`}
+                      className="w-7 h-7 object-contain"
+                    />
                   </div>
+
                   <div>
                     <h3 className="text-lg font-bold text-white tracking-wide">
-                      {exp.company.toUpperCase()}
+                      {certificate.company.toUpperCase()}
                     </h3>
-                    <p className="font-mono text-xs text-accent tracking-wider mt-0.5">
-                      {exp.position.toUpperCase()}
+
+                    <p className="font-mono text-xs text-accent tracking-wider mt-1">
+                      {certificate.tag.toUpperCase()}
                     </p>
                   </div>
                 </div>
 
-                <p className="font-mono text-xs text-accent-light mb-4">
-                  {exp.duration}
-                </p>
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {certificate.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="font-mono text-[10px] tracking-wider text-muted-light border border-border-light rounded px-2 py-1"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
 
-                <p className="text-muted-light text-sm mb-4 leading-relaxed">
-                  <span className="text-accent">&gt;</span> {exp.summary}
-                </p>
-
-                <ul className="space-y-2">
-                  {exp.bullets.map((bullet, i) => (
+                {/* Certificate Details */}
+                <ul className="space-y-2 mb-6">
+                  {certificate.data.map((item, itemIndex) => (
                     <li
-                      key={i}
+                      key={itemIndex}
                       className="text-muted text-sm leading-relaxed flex gap-2"
                     >
                       <span className="text-accent mt-1 flex-shrink-0 text-xs">
                         -
                       </span>
-                      {bullet}
+
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
+
+                {/* View Certificate */}
+                <a
+                  href={certificate.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-border-light rounded px-4 py-2 font-mono text-xs text-white hover:border-accent hover:text-accent transition-all duration-300"
+                >
+                  VIEW CERTIFICATE
+                  <span className="text-accent">↗</span>
+                </a>
               </motion.div>
             </GlareHover>
           ))}
