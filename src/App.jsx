@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import FerrofluidBackground from "./components/FerrofluidBackground";
 
+
 function App() {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
@@ -29,6 +30,7 @@ function App() {
           <Experience />
           <Projects />
           <ContactForm />
+
         </main>
 
         <Footer />

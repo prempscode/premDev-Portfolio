@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
+import TiltedCard from '../components/ui/TiltedCard';
 
 const WhatIDo = () => {
   return (
@@ -34,44 +35,59 @@ const WhatIDo = () => {
           applications
         </motion.p>
 
-        <div className="space-y-6">
-          {portfolioData.services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-all duration-300"
-            >
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2 font-mono">
-                <span className="text-accent">&gt;</span> {service.title}
-              </h3>
+        <div className="space-y-6 px-12 sm:px-16 md:px-20 lg:px-28">
+          <div className="flex flex-col gap-6 w-full">
+            {portfolioData.services.map((service, index) => (
+              <div key={index} className="w-full">
+                <TiltedCard
+                  altText={service.title}
+                  captionText={service.title}
+                  containerWidth="100%"
+                  rotateAmplitude={12}
+                  scaleOnHover={1.05}
+                  showMobileWarning={false}
+                  showTooltip
+                  displayOverlayContent
+                  overlayContent={
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="w-full bg-card border border-border rounded-xl p-7"
+                    >
+                      <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2 font-mono">
+                        <span className="text-accent">&gt;</span> {service.title}
+                      </h3>
 
-              <ul className="space-y-3 mb-6">
-                {service.bullets.map((bullet, i) => (
-                  <li
-                    key={i}
-                    className="text-muted text-sm leading-relaxed flex gap-3"
-                  >
-                    <span className="text-accent mt-1 flex-shrink-0">-</span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+                      <ul className="space-y-3 mb-6">
+                        {service.bullets.map((bullet, i) => (
+                          <li
+                            key={i}
+                            className="text-muted text-sm leading-relaxed flex gap-3"
+                          >
+                            <span className="text-accent mt-1 flex-shrink-0">-</span>
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
 
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-darker border border-border rounded text-xs font-mono text-muted-light"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                      <div className="flex flex-wrap gap-2">
+                        {service.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-darker border border-border rounded text-xs font-mono text-muted-light"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  }
+                />
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
