@@ -200,10 +200,6 @@ canvas {
     --sidebar-ring: oklch(0.556 0 0);
   }
 
-  /*
-   * Don't use outline-ring/50 here.
-   * Your current Tailwind setup isn't generating that utility.
-   */
   * {
     @apply border-border;
   }

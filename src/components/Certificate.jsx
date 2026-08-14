@@ -32,7 +32,7 @@ const Certificate = () => {
             parallaxOn
             hoverDuration={0.2}
             cursorColor="#ffffff"
-            cursorColorOnTarget="#3B82F6"
+            cursorColorOnTarget="#ffffff"
           />
           {portfolioData.certificates.map((certificate, index) => (
             <GlareHover
@@ -51,7 +51,6 @@ const Certificate = () => {
                 transition={{ delay: index * 0.1 }}
                 className="cursor-target bg-card border border-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300 h-full"
               >
-                {/* Company Header */}
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 border border-border-light rounded flex items-center justify-center flex-shrink-0 overflow-hidden">
                     <img
