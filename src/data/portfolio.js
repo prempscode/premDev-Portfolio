@@ -141,7 +141,18 @@ export const portfolioData = {
       demo: "https://learn-react-by-projects.vercel.app",
     },
   ],
-
+  certificates: [
+    {
+      tag: "job-simulation",
+      via: "forge",
+      comapany : "Deloitte"
+    },
+    {
+      tag: "job-simulation",
+      via: "forge",
+      company : "mastercard"
+    },
+  ],
   // Social
   social: {
     github: "https://github.com/prempscode",
