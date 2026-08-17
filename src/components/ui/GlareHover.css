@@ -11,15 +11,17 @@
 }
 
 .glare-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(var(--gh-angle),
-      hsla(0, 0%, 0%, 0) 60%,
-      var(--gh-rgba) 70%,
-      hsla(0, 0%, 0%, 0),
-      hsla(0, 0%, 0%, 0) 100%);
+  background: linear-gradient(
+    var(--gh-angle),
+    hsla(0, 0%, 0%, 0) 60%,
+    var(--gh-rgba) 70%,
+    hsla(0, 0%, 0%, 0),
+    hsla(0, 0%, 0%, 0) 100%
+  );
   transition: var(--gh-duration) ease;
   background-size:
     var(--gh-size) var(--gh-size),
