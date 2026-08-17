@@ -11,13 +11,10 @@ import ContactForm from "./components/ContactForm";
 import FerrofluidBackground from "./components/FerrofluidBackground";
 import Certificate from "./components/Certificate";
 
-
 function App() {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
-
       <FerrofluidBackground />
-
 
       <div className="relative z-10">
         <Navbar />
@@ -29,10 +26,9 @@ function App() {
           <Education />
           <Academics />
           <Experience />
-          <Certificate/>
+          <Certificate />
           <Projects />
           <ContactForm />
-
         </main>
 
         <Footer />
