@@ -1,24 +1,24 @@
-import { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
-import './TiltedCard.css';
+import { useRef, useState } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import "./TiltedCard.css";
 
 const springValues = {
   damping: 30,
   stiffness: 100,
-  mass: 2
+  mass: 2,
 };
 
 export default function TiltedCard({
   imageSrc,
-  altText = 'Tilted card image',
-  captionText = '',
-  containerWidth = '100%',
+  altText = "Tilted card image",
+  captionText = "",
+  containerWidth = "100%",
   scaleOnHover = 1.05,
   rotateAmplitude = 14,
   showMobileWarning = false,
   showTooltip = true,
   overlayContent = null,
-  displayOverlayContent = false
+  displayOverlayContent = false,
 }) {
   const ref = useRef(null);
 
@@ -32,7 +32,7 @@ export default function TiltedCard({
   const rotateFigcaption = useSpring(0, {
     stiffness: 350,
     damping: 30,
-    mass: 1
+    mass: 1,
   });
 
   const [lastY, setLastY] = useState(0);
@@ -45,11 +45,9 @@ export default function TiltedCard({
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top - rect.height / 2;
 
-    const rotationX =
-      (offsetY / (rect.height / 2)) * -rotateAmplitude;
+    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
 
-    const rotationY =
-      (offsetX / (rect.width / 2)) * rotateAmplitude;
+    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
 
     rotateX.set(rotationX);
     rotateY.set(rotationY);
@@ -81,7 +79,7 @@ export default function TiltedCard({
       ref={ref}
       className="tilted-card-figure"
       style={{
-        width: containerWidth
+        width: containerWidth,
       }}
       onMouseMove={handleMouse}
       onMouseEnter={handleMouseEnter}
@@ -98,7 +96,7 @@ export default function TiltedCard({
         style={{
           rotateX,
           rotateY,
-          scale
+          scale,
         }}
       >
         {imageSrc && (
@@ -123,7 +121,7 @@ export default function TiltedCard({
             x,
             y,
             opacity,
-            rotate: rotateFigcaption
+            rotate: rotateFigcaption,
           }}
         >
           {captionText}
