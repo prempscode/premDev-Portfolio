@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolio";
-import TiltedCard from '../components/ui/TiltedCard';
+import TiltedCard from "../components/ui/TiltedCard";
 
 const WhatIDo = () => {
   return (
@@ -57,7 +57,8 @@ const WhatIDo = () => {
                       className="w-full bg-card border border-border rounded-xl p-7"
                     >
                       <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2 font-mono">
-                        <span className="text-accent">&gt;</span> {service.title}
+                        <span className="text-accent">&gt;</span>{" "}
+                        {service.title}
                       </h3>
 
                       <ul className="space-y-3 mb-6">
@@ -66,7 +67,9 @@ const WhatIDo = () => {
                             key={i}
                             className="text-muted text-sm leading-relaxed flex gap-3"
                           >
-                            <span className="text-accent mt-1 flex-shrink-0">-</span>
+                            <span className="text-accent mt-1 flex-shrink-0">
+                              -
+                            </span>
                             {bullet}
                           </li>
                         ))}
