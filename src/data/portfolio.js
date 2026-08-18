@@ -10,7 +10,7 @@ export const portfolioData = {
     { label: "Technologies", value: "10+" },
     { label: "Years Learning", value: "2+" },
   ],
-  profileImage: "/images/profile.png",
+  profileImage: "/images/big-profile.png",
 
   // What I Do
   services: [

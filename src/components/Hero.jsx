@@ -5,12 +5,15 @@ import "../index.css";
 
 const CountUp = ({ end, suffix = "" }) => {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     let start = 0;
     const duration = 2000;
     const increment = end / (duration / 16);
+
     const timer = setInterval(() => {
       start += increment;
+
       if (start >= end) {
         setCount(end);
         clearInterval(timer);
@@ -18,8 +21,10 @@ const CountUp = ({ end, suffix = "" }) => {
         setCount(Math.floor(start));
       }
     }, 16);
+
     return () => clearInterval(timer);
   }, [end]);
+
   return (
     <span>
       {count}
@@ -30,8 +35,12 @@ const CountUp = ({ end, suffix = "" }) => {
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center bg-dark pt-28 pb-16 px-6 lg:px-8 relative">
-      <div className="max-w-7xl mx-auto w-full">
+    <section className="min-h-screen bg-dark pt-28 pb-16 px-6 lg:px-8 relative overflow-hidden">
+      {/* Background blue glow */}
+      {/* <div className="absolute right-[18%] top-[35%] w-[450px] h-[450px] bg-accent/20 rounded-full blur-[120px]" /> */}
+
+      <div className="max-w-7xl mx-auto w-full relative">
+        {/* Section label */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -40,13 +49,14 @@ const Hero = () => {
           // SECTION_01
         </motion.p>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[700px]">
+          {/* ================= LEFT ================= */}
+          <div className="relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className=" hover-effect text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]  "
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.1]"
             >
               HI ALL,
             </motion.h1>
@@ -55,10 +65,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]"
+              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.1]"
             >
               I'M
             </motion.h1>
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -66,23 +77,34 @@ const Hero = () => {
               className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.1] flex items-end"
             >
               {portfolioData.name.toUpperCase()}
-              <span className="inline-block w-4 md:w-6 h-3 md:h-4 bg-accent ml-2 mb-3 md:mb-4 animate-blink"></span>
+
+              <span className="inline-block w-4 md:w-6 h-3 md:h-4 bg-accent ml-2 mb-3 md:mb-4 animate-blink" />
             </motion.h1>
 
+            {/* Blue line */}
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "70px" }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="h-[3px] bg-accent mt-10"
+            />
+
+            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-muted text-lg md:text-xl leading-relaxed max-w-xl mt-10 mb-12"
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-muted text-lg md:text-xl leading-relaxed max-w-xl mt-8"
             >
               {portfolioData.tagline}
             </motion.p>
 
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex gap-12"
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex gap-12 mt-12"
             >
               {portfolioData.stats.map((stat, i) => (
                 <div key={i}>
@@ -90,13 +112,12 @@ const Hero = () => {
                     {stat.value.includes("%") ? (
                       <CountUp end={parseInt(stat.value)} suffix="%" />
                     ) : stat.value.includes("+") ? (
-                      <>
-                        <CountUp end={parseInt(stat.value)} suffix="+" />
-                      </>
+                      <CountUp end={parseInt(stat.value)} suffix="+" />
                     ) : (
                       stat.value
                     )}
                   </p>
+
                   <p className="font-mono text-[10px] text-muted tracking-[0.2em]">
                     {stat.label.toUpperCase()}
                   </p>
@@ -105,21 +126,48 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center"
-          >
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 bg-accent rounded-full opacity-10 blur-3xl"></div>
-              <img
-                src={portfolioData.profileImage}
-                alt={portfolioData.name}
-                className="relative w-full h-full object-cover rounded-full"
-                style={{ background: "#3b82f6" }}
-              />
-            </div>
+          {/* ================= RIGHT IMAGE ================= */}
+          <motion.div className="relative hidden lg:flex items-end justify-center h-[700px] -translate-y-35">
+            {/* Blue glow behind person */}
+            {/* <div
+              className="
+                absolute
+                w-[420px]
+                h-[420px]
+                bg-blue-600/40
+                rounded-full
+                blur-[100px]
+                top-[180px]
+              "
+            /> */}
+
+            {/* Decorative blue ring */}
+            {/* <div
+              className="
+                absolute
+                w-[500px]
+                h-[500px]
+                border
+                border-blue-500/20
+                rounded-full
+                top-[130px]
+              "
+            /> */}
+
+            {/* Portrait */}
+            <img
+              src={portfolioData.profileImage}
+              alt={portfolioData.name}
+              className="
+                relative
+                z-10
+                w-[500px]
+                h-[650px]
+                object-cover
+                object-top
+                mix-blend-lighten
+              "
+            />
           </motion.div>
         </div>
       </div>
