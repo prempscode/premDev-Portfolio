@@ -28,7 +28,8 @@ export const portfolioData = {
         "REST APIs",
         "Socket.io",
         "JWT",
-        "Cloudinary"
+        "Cloudinary",
+        "ImageKit",
       ],
     },
     {
@@ -103,8 +104,8 @@ export const portfolioData = {
       summary:
         "Gained hands-on experience in frontend development and responsive web design.",
       bullets: [
-        "Developed a responsive blog website using HTML, CSS, and JavaScript.",
-        "Implemented responsive layouts using CSS media queries.",
+        "Developed a responsive blog website.",
+        "Implemented responsive layouts with media queries.",
         "Optimized the interface for mobile, tablet, and desktop devices.",
       ],
     },
