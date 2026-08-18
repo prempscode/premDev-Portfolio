@@ -28,13 +28,13 @@ export const portfolioData = {
         "REST APIs",
         "Socket.io",
         "JWT",
+        "Cloudinary"
       ],
     },
     {
       title: "Frontend Development",
       bullets: [
-        "Delivering production-ready React.js and Next.js interfaces for web applications and operational workflows",
-        "Translating product requirements into reliable full stack features across authentication, user management, and business automation",
+        "Delivering production-ready React.js interfaces for web applications and operational workflows",
         "Collaborating with frontend teams to integrate API-driven React components and real-time application states",
       ],
       tags: ["React.js", "HTML", "CSS", "Vite", "JavaScript"],
@@ -52,9 +52,9 @@ export const portfolioData = {
 
   // Proficiency
   proficiency: [
-    { skill: "Backend Development", level: 65 },
-    { skill: "Frontend Development", level: 50 },
-    { skill: "Database & APIs", level: 65 },
+    { skill: "Backend Development", level: 85 },
+    { skill: "Frontend Development", level: 75 },
+    { skill: "Database & APIs", level: 85 },
   ],
 
   // Education
@@ -124,7 +124,7 @@ export const portfolioData = {
       id: "PROJ_002",
       name: "Svara — Music Playlist App",
       description:
-        "A full-stack music playlist/streaming app (React + Node/Express/MongoDB) with JWT auth, track uploads with cover art via ImageKit, likes, albums, and user profiles.",
+        "A full-stack music playlist/streaming app (React + Node,Express,MongoDB) with JWT auth, track uploads with cover art via ImageKit, likes, albums, and user profiles.",
       github: "https://github.com/prempscode/svara",
       demo: "https://svara-phi.vercel.app",
     },
@@ -132,7 +132,7 @@ export const portfolioData = {
       id: "PROJ_003",
       name: "Ledger Project — Banking System",
       description:
-        "A double-entry banking/ledger backend (Node/Express/MongoDB) with JWT auth, idempotent transfers, and MongoDB transactions ensuring debits and credits are never left inconsistent, plus a React (Vite) frontend for accounts, balances, and transfers.",
+        "A double-entry banking/ledger backend (Node,Express,MongoDB) with JWT auth, idempotent transfers, and MongoDB transactions ensuring debits and credits are never left inconsistent, plus a React (Vite) frontend for accounts, balances, and transfers.",
       github: "https://github.com/prempscode/ledger-project",
       demo: "https://ledger-project-sandy.vercel.app",
     },
