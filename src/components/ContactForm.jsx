@@ -65,8 +65,7 @@ const ContactForm = () => {
             viewport={{ once: true }}
             className="text-muted mb-8"
           >
-            Send a message — it'll show up as a GitHub Issue and I'll get back
-            to you.
+            Send a message — I'll get back to you.
           </motion.p>
 
           {status === "success" ? (
@@ -83,7 +82,7 @@ const ContactForm = () => {
                 rel="noopener noreferrer"
                 className="text-accent underline"
               >
-                View the issue on GitHub →
+                View your Comment →
               </a>
             </motion.div>
           ) : (
