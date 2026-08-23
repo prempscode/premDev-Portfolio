@@ -55,7 +55,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="cursor-target group relative bg-card border border-border rounded-xl p-8 hover:border-accent/50 transition-all duration-300"
+                className="cursor-target group relative bg-card border border-border rounded-xl p-8 hover:border-accent:/50  transition-all duration-300"
               >
                 <div className="absolute right-0 top-4 bottom-4 w-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
