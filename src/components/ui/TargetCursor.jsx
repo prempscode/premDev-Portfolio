@@ -38,7 +38,7 @@ const TargetCursor = ({
   hideDefaultCursor = true,
   hoverDuration = 0.2,
   parallaxOn = true,
-  cursorColor = "#ffffff",
+  cursorColor = "#eb6425",
   cursorColorOnTarget,
 }) => {
   const cursorRef = useRef(null);

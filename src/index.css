@@ -54,7 +54,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: #3b82f6;
+  background: #eb6425 50%;
   color: #ffffff;
 }
 
@@ -65,7 +65,7 @@ body {
 
   background-image: linear-gradient(
     to right,
-    rgb(37, 99, 235) 50%,
+    #eb6425 50%,
     transparent 50%
   );
 
