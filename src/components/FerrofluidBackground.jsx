@@ -15,7 +15,7 @@ const FerrofluidBackground = () => {
         shimmer={2}
         glow={2}
         flowDirection="down"
-        opacity={0.4}
+        opacity={0.2}
         mouseInteraction={false}
       />
     </div>
