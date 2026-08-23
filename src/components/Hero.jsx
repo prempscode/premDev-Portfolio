@@ -49,7 +49,7 @@ const Hero = () => {
           // SECTION_01
         </motion.p>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[700px]">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-175">
           {/* ================= LEFT ================= */}
           <div className="relative z-10">
             <motion.h1
@@ -86,7 +86,7 @@ const Hero = () => {
               initial={{ width: 0 }}
               animate={{ width: "70px" }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="h-[3px] bg-accent mt-10"
+              className="h-0.75 bg-accent mt-10"
             />
 
             {/* Tagline */}
@@ -127,7 +127,7 @@ const Hero = () => {
           </div>
 
           {/* ================= RIGHT IMAGE ================= */}
-          <motion.div className="relative hidden lg:flex items-end justify-center h-[700px] -translate-y-35">
+          <motion.div className="relative hidden lg:flex items-end justify-center h-175 -translate-y-35">
             {/* Blue glow behind person */}
             {/* <div
               className="
@@ -161,8 +161,8 @@ const Hero = () => {
               className="
                 relative
                 z-10
-                w-[500px]
-                h-[650px]
+                w-125
+                h-162.5
                 object-cover
                 object-top
                 mix-blend-lighten
