@@ -70,24 +70,24 @@ const Hero = () => {
               I'M
             </motion.h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.1] flex items-end"
-            >
-              {portfolioData.name.toUpperCase()}
+            <div className="w-fit">
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight  text-white leading-[1.1] flex items-end"
+              >
+                {portfolioData.name.toUpperCase()}
 
-              <span className="inline-block w-4 md:w-6 h-3 md:h-4 bg-accent ml-2 mb-3 md:mb-4 animate-blink" />
-            </motion.h1>
-
-            {/* Blue line */}
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "70px" }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="h-0.75 bg-accent mt-10"
-            />
+                <span className="inline-block w-4 md:w-6 h-3 md:h-4 bg-blue-500 ml-2 mb-3 md:mb-4 animate-blink" />
+              </motion.h1>
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "85%" }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="h-0.75 bg-accent mt-3"
+              />
+            </div>
 
             {/* Tagline */}
             <motion.p
