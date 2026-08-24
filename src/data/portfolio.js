@@ -1,186 +1,186 @@
-import deloitteLogo from "/assets/certificates/deloitte.jpeg";
-import mastercardLogo from "/assets/certificates/mastercard.png";
+import deloitteLogo from '/assets/certificates/deloitte.jpeg'
+import mastercardLogo from '/assets/certificates/mastercard.png'
 
 export const portfolioData = {
   // Hero
-  name: "Prem",
-  tagline: "I think, therefore I build.",
+  name: 'Prem',
+  tagline: 'I think, therefore I build.',
   stats: [
-    { label: "Projects Built", value: "5+" },
-    { label: "Technologies", value: "10+" },
-    { label: "Years Learning", value: "2+" },
+    { label: 'Projects Built', value: '5+' },
+    { label: 'Technologies', value: '10+' },
+    { label: 'Years Learning', value: '2+' }
   ],
-  profileImage: "/images/big-profile.png",
+  profileImage: '/images/big-profile.png',
 
   // What I Do
   services: [
     {
-      title: "Backend Engineering",
+      title: 'Backend Engineering',
       bullets: [
-        "Building REST APIs and backend services with Node.js and Express.js",
-        "Implementing authentication, authorization, file uploads, and real-time communication",
-        "Designing and working with databases using MongoDB",
+        'Building REST APIs and backend services with Node.js and Express.js',
+        'Implementing authentication, authorization, file uploads, and real-time communication',
+        'Designing and working with databases using MongoDB'
       ],
       tags: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "REST APIs",
-        "Socket.io",
-        "JWT",
-        "Cloudinary",
-        "ImageKit",
-      ],
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'REST APIs',
+        'Socket.io',
+        'JWT',
+        'Cloudinary',
+        'ImageKit'
+      ]
     },
     {
-      title: "Frontend Development",
+      title: 'Frontend Development',
       bullets: [
-        "Delivering production-ready React.js interfaces for web applications and operational workflows",
-        "Collaborating with frontend teams to integrate API-driven React components and real-time application states",
+        'Delivering production-ready React.js interfaces for web applications and operational workflows',
+        'Collaborating with frontend teams to integrate API-driven React components and real-time application states'
       ],
-      tags: ["React.js", "HTML", "CSS", "Vite", "JavaScript"],
+      tags: ['React.js', 'HTML', 'CSS', 'Vite', 'JavaScript']
     },
     {
-      title: "Deployment & Tools",
+      title: 'Deployment & Tools',
       bullets: [
-        "Deploying full-stack applications with separate frontend and backend services",
-        "Managing projects with Git and GitHub",
-        "Working with production environments and environment variables",
+        'Deploying full-stack applications with separate frontend and backend services',
+        'Managing projects with Git and GitHub',
+        'Working with production environments and environment variables'
       ],
-      tags: ["Git", "GitHub", "Vercel", "Render"],
-    },
+      tags: ['Git', 'GitHub', 'Vercel', 'Render']
+    }
   ],
 
   // Proficiency
   proficiency: [
-    { skill: "Backend Development", level: 85 },
-    { skill: "Frontend Development", level: 75 },
-    { skill: "Database & APIs", level: 85 },
+    { skill: 'Backend Development', level: 85 },
+    { skill: 'Frontend Development', level: 75 },
+    { skill: 'Database & APIs', level: 85 }
   ],
 
   // Education
   education: [
     {
       school: "ITER, Siksha 'O' Anusandhan (SOA)",
-      degree: "Bachelor of Computer Applications",
-    },
+      degree: 'Bachelor of Computer Applications'
+    }
   ],
   // academics
   academics: {
-    degree: "BCA",
+    degree: 'BCA',
     cgpa: 9.81,
     years: [
       {
         year: 1,
         semesters: [
           { sem: 1, sgpa: 9.8 },
-          { sem: 2, sgpa: 9.5 },
-        ],
+          { sem: 2, sgpa: 9.5 }
+        ]
       },
       {
         year: 2,
         semesters: [
           { sem: 3, sgpa: 10 },
-          { sem: 4, sgpa: 9.91 },
-        ],
+          { sem: 4, sgpa: 9.91 }
+        ]
       },
       {
         year: 3,
         semesters: [
-          { sem: 5, sgpa: "soon" },
-          { sem: 6, sgpa: "soon" },
-        ],
-      },
-    ],
+          { sem: 5, sgpa: 'soon' },
+          { sem: 6, sgpa: 'soon' }
+        ]
+      }
+    ]
   },
 
   // Experience
   experience: [
     {
-      link: "https://www.linkedin.com/posts/prem-pravash-sahu-6392b4334_internshipcompletion-webdevelopment-frontenddeveloper-activity-7370058776030126081-3lTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFQMsY0BeRgUlYBYwgDFUU3Aem0cOaqEqgA",
-      company: "NativeSoftTech",
-      position: "Learning Intern",
-      duration: "August 2025 - September 2025",
+      link: 'https://www.linkedin.com/posts/prem-pravash-sahu-6392b4334_internshipcompletion-webdevelopment-frontenddeveloper-activity-7370058776030126081-3lTT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFQMsY0BeRgUlYBYwgDFUU3Aem0cOaqEqgA',
+      company: 'NativeSoftTech',
+      position: 'Learning Intern',
+      duration: 'August 2025 - September 2025',
       summary:
-        "Gained hands-on experience in frontend development and responsive web design.",
+        'Gained hands-on experience in frontend development and responsive web design.',
       bullets: [
-        "Developed a responsive blog website.",
-        "Implemented responsive layouts with media queries.",
-        "Optimized the interface for mobile, tablet, and desktop devices.",
-      ],
-    },
+        'Developed a responsive blog website.',
+        'Implemented responsive layouts with media queries.',
+        'Optimized the interface for mobile, tablet, and desktop devices.'
+      ]
+    }
   ],
 
   // Projects
   projects: [
     {
-      id: "PROJ_001",
-      name: "Seer — Real-Time Chat App",
+      id: 'PROJ_001',
+      name: 'Seer — Real-Time Chat App',
       description:
-        "A full-stack real-time messaging app (MERN + Socket.io) with JWT authentication, live typing indicators, online/offline presence, instant user list updates, and image sharing via Cloudinary.",
-      github: "https://github.com/prempscode/seer-chat-app",
-      demo: null,
+        'A full-stack real-time messaging app (MERN + Socket.io) with JWT authentication, live typing indicators, online/offline presence, instant user list updates, and image sharing via Cloudinary.',
+      github: 'https://github.com/prempscode/seer-chat-app',
+      demo: null
     },
     {
-      id: "PROJ_002",
-      name: "Svara — Music Playlist App",
+      id: 'PROJ_002',
+      name: 'Svara — Music Playlist App',
       description:
-        "A full-stack music playlist/streaming app (React + Node,Express,MongoDB) with JWT auth, track uploads with cover art via ImageKit, likes, albums, and user profiles.",
-      github: "https://github.com/prempscode/svara",
-      demo: "https://svara-phi.vercel.app",
+        'A full-stack music playlist/streaming app (React + Node,Express,MongoDB) with JWT auth, track uploads with cover art via ImageKit, likes, albums, and user profiles.',
+      github: 'https://github.com/prempscode/svara',
+      demo: 'https://svara-phi.vercel.app'
     },
     {
-      id: "PROJ_003",
-      name: "Ledger Project — Banking System",
+      id: 'PROJ_003',
+      name: 'Ledger Project — Banking System',
       description:
-        "A double-entry banking/ledger backend (Node,Express,MongoDB) with JWT auth, idempotent transfers, and MongoDB transactions ensuring debits and credits are never left inconsistent, plus a React (Vite) frontend for accounts, balances, and transfers.",
-      github: "https://github.com/prempscode/ledger-project",
-      demo: "https://ledger-project-sandy.vercel.app",
+        'A double-entry banking/ledger backend (Node,Express,MongoDB) with JWT auth, idempotent transfers, and MongoDB transactions ensuring debits and credits are never left inconsistent, plus a React (Vite) frontend for accounts, balances, and transfers.',
+      github: 'https://github.com/prempscode/ledger-project',
+      demo: 'https://ledger-project-sandy.vercel.app'
     },
     {
-      id: "PROJ_004",
-      name: "React Learning Project",
+      id: 'PROJ_004',
+      name: 'React Learning Project',
       description:
-        "A collection of small React projects built to explore component architecture, state management, hooks, and modern frontend development patterns.",
-      github: "https://github.com/prempscode/learn-react-by-projects",
-      demo: "https://learn-react-by-projects.vercel.app",
-    },
+        'A collection of small React projects built to explore component architecture, state management, hooks, and modern frontend development patterns.',
+      github: 'https://github.com/prempscode/learn-react-by-projects',
+      demo: 'https://learn-react-by-projects.vercel.app'
+    }
   ],
   certificates: [
     {
-      skills: ["Log Analysis", "Web Security"],
+      skills: ['Log Analysis', 'Web Security'],
       logo: deloitteLogo,
       data: [
-        "Completed a job simulation involving reading web activity logs",
-        "Supported a client in a cyber security breach",
-        "Answered questions to identify suspicious user activity",
+        'Completed a job simulation involving reading web activity logs',
+        'Supported a client in a cyber security breach',
+        'Answered questions to identify suspicious user activity'
       ],
-      link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_6a2a919dd12437d79007a79f_1786368907399_completion_certificate.pdf",
-      tag: "job-simulation",
-      via: "forge",
-      company: "Deloitte",
+      link: 'https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_6a2a919dd12437d79007a79f_1786368907399_completion_certificate.pdf',
+      tag: 'job-simulation',
+      via: 'forge',
+      company: 'Deloitte'
     },
     {
-      skills: ["SECURITY AWARENESS", "SECURITY TRAINING"],
+      skills: ['SECURITY AWARENESS', 'SECURITY TRAINING'],
       logo: mastercardLogo,
       data: [
-        "Completed a job simulation where I served as an analyst on Mastercard’s Security Awareness Team",
-        "Helped identify and report security threats such as phishing",
-        "Analyzed and identified which areas of the business needed more robust security training and implemented training courses and procedures for those teams",
+        'Completed a job simulation where I served as an analyst on Mastercard’s Security Awareness Team',
+        'Helped identify and report security threats such as phishing',
+        'Analyzed and identified which areas of the business needed more robust security training and implemented training courses and procedures for those teams'
       ],
-      link: "https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_6a2a919dd12437d79007a79f_1786366882579_completion_certificate.pdf",
-      tag: "job-simulation",
-      via: "forge",
-      company: "mastercard",
-    },
+      link: 'https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/vcKAB5yYAgvemepGQ_mfxGwGDp6WkQmtmTf_6a2a919dd12437d79007a79f_1786366882579_completion_certificate.pdf',
+      tag: 'job-simulation',
+      via: 'forge',
+      company: 'mastercard'
+    }
   ],
   // Social
   social: {
-    github: "https://github.com/prempscode",
-    linkedin: "https://linkedin.com/in/prem-pravash-sahu-6392b4334",
-    instagram: "https://instagram.com/not_premps",
+    github: 'https://github.com/prempscode',
+    linkedin: 'https://linkedin.com/in/prem-pravash-sahu-6392b4334',
+    instagram: 'https://instagram.com/not_premps'
   },
 
   // Contact
-  email: "prempravash65@gmail.com",
-};
+  email: 'prempravash65@gmail.com'
+}
