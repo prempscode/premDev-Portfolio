@@ -1,51 +1,51 @@
-import { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Triangle } from "ogl";
-import "./Ferrofluid.css";
+import { useEffect, useRef } from 'react'
+import { Renderer, Program, Mesh, Triangle } from 'ogl'
+import './Ferrofluid.css'
 
-const MAX_COLORS = 8;
+const MAX_COLORS = 8
 
-const hexToRGB = (hex) => {
-  const c = hex.replace("#", "").padEnd(6, "0");
-  const r = parseInt(c.slice(0, 2), 16) / 255;
-  const g = parseInt(c.slice(2, 4), 16) / 255;
-  const b = parseInt(c.slice(4, 6), 16) / 255;
-  return [r, g, b];
-};
+const hexToRGB = hex => {
+  const c = hex.replace('#', '').padEnd(6, '0')
+  const r = parseInt(c.slice(0, 2), 16) / 255
+  const g = parseInt(c.slice(2, 4), 16) / 255
+  const b = parseInt(c.slice(4, 6), 16) / 255
+  return [r, g, b]
+}
 
-const prepColors = (input) => {
+const prepColors = input => {
   const base = (
-    input && input.length ? input : ["#4F46E5", "#06B6D4", "#E0F2FE"]
-  ).slice(0, MAX_COLORS);
-  const count = base.length;
-  const arr = [];
+    input && input.length ? input : ['#4F46E5', '#06B6D4', '#E0F2FE']
+  ).slice(0, MAX_COLORS)
+  const count = base.length
+  const arr = []
   for (let i = 0; i < MAX_COLORS; i++)
-    arr.push(hexToRGB(base[Math.min(i, base.length - 1)]));
-  const avg = [0, 0, 0];
+    arr.push(hexToRGB(base[Math.min(i, base.length - 1)]))
+  const avg = [0, 0, 0]
   for (let i = 0; i < count; i++) {
-    avg[0] += arr[i][0];
-    avg[1] += arr[i][1];
-    avg[2] += arr[i][2];
+    avg[0] += arr[i][0]
+    avg[1] += arr[i][1]
+    avg[2] += arr[i][2]
   }
-  avg[0] /= count;
-  avg[1] /= count;
-  avg[2] /= count;
-  return { arr, count, avg };
-};
+  avg[0] /= count
+  avg[1] /= count
+  avg[2] /= count
+  return { arr, count, avg }
+}
 
-const flowVec = (d) => {
+const flowVec = d => {
   switch (d) {
-    case "up":
-      return [0, 1];
-    case "down":
-      return [0, -1];
-    case "left":
-      return [-1, 0];
-    case "right":
-      return [1, 0];
+    case 'up':
+      return [0, 1]
+    case 'down':
+      return [0, -1]
+    case 'left':
+      return [-1, 0]
+    case 'right':
+      return [1, 0]
     default:
-      return [0, -1];
+      return [0, -1]
   }
-};
+}
 
 const vertex = `
 attribute vec2 position;
@@ -55,7 +55,7 @@ void main() {
   vUv = uv;
   gl_Position = vec4(position, 0.0, 1.0);
 }
-`;
+`
 
 const fragment = `
 precision highp float;
@@ -188,13 +188,13 @@ void main() {
   mainImage(color, vUv * iResolution.xy);
   gl_FragColor = color;
 }
-`;
+`
 
 const Ferrofluid = ({
   className,
   dpr,
   paused = false,
-  colors = ["#ffffff", "#ffffff", "#ffffff"],
+  colors = ['#ffffff', '#ffffff', '#ffffff'],
   speed = 0.5,
   scale = 1.6,
   turbulence = 1,
@@ -203,48 +203,48 @@ const Ferrofluid = ({
   sharpness = 2.5,
   shimmer = 1.5,
   glow = 2,
-  flowDirection = "down",
+  flowDirection = 'down',
   opacity = 1,
   mouseInteraction = true,
   mouseStrength = 1,
   mouseRadius = 0.35,
   mouseDampening = 0.15,
-  mixBlendMode,
+  mixBlendMode
 }) => {
-  const containerRef = useRef(null);
-  const rafRef = useRef(null);
-  const programRef = useRef(null);
-  const meshRef = useRef(null);
-  const geometryRef = useRef(null);
-  const rendererRef = useRef(null);
-  const mouseTargetRef = useRef([0, 0]);
-  const lastTimeRef = useRef(0);
+  const containerRef = useRef(null)
+  const rafRef = useRef(null)
+  const programRef = useRef(null)
+  const meshRef = useRef(null)
+  const geometryRef = useRef(null)
+  const rendererRef = useRef(null)
+  const mouseTargetRef = useRef([0, 0])
+  const lastTimeRef = useRef(0)
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const container = containerRef.current
+    if (!container) return
 
     const renderer = new Renderer({
       dpr:
         dpr ??
-        (typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1),
+        (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1),
       alpha: true,
-      antialias: true,
-    });
-    rendererRef.current = renderer;
-    const gl = renderer.gl;
-    const canvas = gl.canvas;
-    gl.clearColor(0, 0, 0, 0);
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.display = "block";
-    container.appendChild(canvas);
+      antialias: true
+    })
+    rendererRef.current = renderer
+    const gl = renderer.gl
+    const canvas = gl.canvas
+    gl.clearColor(0, 0, 0, 0)
+    canvas.style.width = '100%'
+    canvas.style.height = '100%'
+    canvas.style.display = 'block'
+    container.appendChild(canvas)
 
-    const { arr, count, avg } = prepColors(colors);
+    const { arr, count, avg } = prepColors(colors)
 
     const uniforms = {
       iResolution: {
-        value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1],
+        value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1]
       },
       iMouse: { value: [0, 0] },
       iTime: { value: 0 },
@@ -270,95 +270,95 @@ const Ferrofluid = ({
       uOpacity: { value: opacity },
       uMouseEnabled: { value: mouseInteraction ? 1 : 0 },
       uMouseStrength: { value: mouseStrength },
-      uMouseRadius: { value: mouseRadius },
-    };
+      uMouseRadius: { value: mouseRadius }
+    }
 
-    const program = new Program(gl, { vertex, fragment, uniforms });
-    programRef.current = program;
+    const program = new Program(gl, { vertex, fragment, uniforms })
+    programRef.current = program
 
-    const geometry = new Triangle(gl);
-    geometryRef.current = geometry;
-    const mesh = new Mesh(gl, { geometry, program });
-    meshRef.current = mesh;
+    const geometry = new Triangle(gl)
+    geometryRef.current = geometry
+    const mesh = new Mesh(gl, { geometry, program })
+    meshRef.current = mesh
 
     const resize = () => {
-      const rect = container.getBoundingClientRect();
-      renderer.setSize(rect.width, rect.height);
+      const rect = container.getBoundingClientRect()
+      renderer.setSize(rect.width, rect.height)
       uniforms.iResolution.value = [
         gl.drawingBufferWidth,
         gl.drawingBufferHeight,
-        1,
-      ];
-    };
-
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(container);
-
-    const onPointerMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      const sc = renderer.dpr || 1;
-      const x = (e.clientX - rect.left) * sc;
-      const y = (rect.height - (e.clientY - rect.top)) * sc;
-      mouseTargetRef.current = [x, y];
-      if (mouseDampening <= 0) {
-        uniforms.iMouse.value = [x, y];
-      }
-    };
-    if (mouseInteraction) {
-      canvas.addEventListener("pointermove", onPointerMove);
+        1
+      ]
     }
 
-    const loop = (t) => {
-      rafRef.current = requestAnimationFrame(loop);
-      uniforms.iTime.value = t * 0.001;
+    resize()
+    const ro = new ResizeObserver(resize)
+    ro.observe(container)
+
+    const onPointerMove = e => {
+      const rect = canvas.getBoundingClientRect()
+      const sc = renderer.dpr || 1
+      const x = (e.clientX - rect.left) * sc
+      const y = (rect.height - (e.clientY - rect.top)) * sc
+      mouseTargetRef.current = [x, y]
+      if (mouseDampening <= 0) {
+        uniforms.iMouse.value = [x, y]
+      }
+    }
+    if (mouseInteraction) {
+      canvas.addEventListener('pointermove', onPointerMove)
+    }
+
+    const loop = t => {
+      rafRef.current = requestAnimationFrame(loop)
+      uniforms.iTime.value = t * 0.001
       if (mouseDampening > 0) {
-        if (!lastTimeRef.current) lastTimeRef.current = t;
-        const dt = (t - lastTimeRef.current) / 1000;
-        lastTimeRef.current = t;
-        const tau = Math.max(1e-4, mouseDampening);
-        let factor = 1 - Math.exp(-dt / tau);
-        if (factor > 1) factor = 1;
-        const target = mouseTargetRef.current;
-        const cur = uniforms.iMouse.value;
-        cur[0] += (target[0] - cur[0]) * factor;
-        cur[1] += (target[1] - cur[1]) * factor;
+        if (!lastTimeRef.current) lastTimeRef.current = t
+        const dt = (t - lastTimeRef.current) / 1000
+        lastTimeRef.current = t
+        const tau = Math.max(1e-4, mouseDampening)
+        let factor = 1 - Math.exp(-dt / tau)
+        if (factor > 1) factor = 1
+        const target = mouseTargetRef.current
+        const cur = uniforms.iMouse.value
+        cur[0] += (target[0] - cur[0]) * factor
+        cur[1] += (target[1] - cur[1]) * factor
       } else {
-        lastTimeRef.current = t;
+        lastTimeRef.current = t
       }
       if (!paused && programRef.current && meshRef.current) {
         try {
-          renderer.render({ scene: meshRef.current });
+          renderer.render({ scene: meshRef.current })
         } catch (e) {
-          console.error(e);
+          console.error(e)
         }
       }
-    };
-    rafRef.current = requestAnimationFrame(loop);
+    }
+    rafRef.current = requestAnimationFrame(loop)
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
       if (mouseInteraction)
-        canvas.removeEventListener("pointermove", onPointerMove);
-      ro.disconnect();
+        canvas.removeEventListener('pointermove', onPointerMove)
+      ro.disconnect()
       if (canvas.parentElement === container) {
-        container.removeChild(canvas);
+        container.removeChild(canvas)
       }
       const callIfFn = (obj, key) => {
-        const fn = obj && obj[key];
-        if (typeof fn === "function") {
-          fn.call(obj);
+        const fn = obj && obj[key]
+        if (typeof fn === 'function') {
+          fn.call(obj)
         }
-      };
-      callIfFn(programRef.current, "remove");
-      callIfFn(geometryRef.current, "remove");
-      callIfFn(meshRef.current, "remove");
-      callIfFn(rendererRef.current, "destroy");
-      programRef.current = null;
-      geometryRef.current = null;
-      meshRef.current = null;
-      rendererRef.current = null;
-    };
+      }
+      callIfFn(programRef.current, 'remove')
+      callIfFn(geometryRef.current, 'remove')
+      callIfFn(meshRef.current, 'remove')
+      callIfFn(rendererRef.current, 'destroy')
+      programRef.current = null
+      geometryRef.current = null
+      meshRef.current = null
+      rendererRef.current = null
+    }
   }, [
     dpr,
     paused,
@@ -376,18 +376,18 @@ const Ferrofluid = ({
     mouseInteraction,
     mouseStrength,
     mouseRadius,
-    mouseDampening,
-  ]);
+    mouseDampening
+  ])
 
   return (
     <div
       ref={containerRef}
-      className={`ferrofluid-container ${className ?? ""}`}
+      className={`ferrofluid-container ${className ?? ''}`}
       style={{
-        ...(mixBlendMode && { mixBlendMode }),
+        ...(mixBlendMode && { mixBlendMode })
       }}
     />
-  );
-};
+  )
+}
 
-export default Ferrofluid;
+export default Ferrofluid
