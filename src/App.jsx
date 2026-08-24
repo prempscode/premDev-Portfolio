@@ -1,22 +1,22 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import WhatIDo from "./components/WhatIDo";
-import Proficiency from "./components/Proficiency";
-import Education from "./components/Education";
-import Academics from "./components/Academics";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
-import ContactForm from "./components/ContactForm";
-import FerrofluidBackground from "./components/FerrofluidBackground";
-import Certificate from "./components/Certificate";
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import WhatIDo from './components/WhatIDo'
+import Proficiency from './components/Proficiency'
+import Education from './components/Education'
+import Academics from './components/Academics'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+import ContactForm from './components/ContactForm'
+import FerrofluidBackground from './components/FerrofluidBackground'
+import Certificate from './components/Certificate'
 
-function App() {
+function App () {
   return (
-    <div className="relative min-h-screen text-white overflow-hidden">
+    <div className='relative min-h-screen text-white overflow-hidden'>
       <FerrofluidBackground />
 
-      <div className="relative z-10">
+      <div className='relative z-10'>
         <Navbar />
 
         <main>
@@ -34,7 +34,7 @@ function App() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
