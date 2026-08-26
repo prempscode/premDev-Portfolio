@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "@fontsource-variable/geist";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import '@fontsource-variable/geist';
 @config "../tailwind.config.js";
 html {
   scroll-behavior: smooth;
@@ -8,13 +8,11 @@ html {
 }
 
 * {
-  cursor:
-    url("/cursor.png") 4 4,
-    auto;
+  cursor: url('/cursor.png') 4 4, auto;
 }
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: black;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
@@ -28,8 +26,10 @@ body {
 
 /* Blue grid background */
 .grid-bg {
-  background-image:
-    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(59, 130, 246, 0.04) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
@@ -68,9 +68,7 @@ body {
   background-size: 200% 100%;
   background-position: right bottom;
 
-  transition:
-    background-position 0.2s ease-out,
-    color 0.4s ease-out;
+  transition: background-position 0.2s ease-out, color 0.4s ease-out;
 }
 
 .hover-effect:hover {
@@ -103,7 +101,7 @@ canvas {
 @layer base {
   .theme {
     --font-heading: var(--font-sans);
-    --font-sans: "Geist Variable", sans-serif;
+    --font-sans: 'Geist Variable', sans-serif;
   }
 
   :root {
