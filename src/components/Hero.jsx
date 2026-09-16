@@ -36,11 +36,7 @@ const CountUp = ({ end, suffix = '' }) => {
 const Hero = () => {
   return (
     <section className='min-h-screen bg-dark pt-28 pb-16 px-6 lg:px-8 relative overflow-hidden'>
-      {/* Background blue glow */}
-      {/* <div className="absolute right-[18%] top-[35%] w-[450px] h-[450px] bg-accent/20 rounded-full blur-[120px]" /> */}
-
       <div className='max-w-7xl mx-auto w-full relative'>
-        {/* Section label */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -50,7 +46,6 @@ const Hero = () => {
         </motion.p>
 
         <div className='grid lg:grid-cols-2 gap-8 items-center min-h-175'>
-          {/* ================= LEFT ================= */}
           <div className='relative z-10'>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -89,7 +84,6 @@ const Hero = () => {
               />
             </div>
 
-            {/* Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -99,7 +93,6 @@ const Hero = () => {
               {portfolioData.tagline}
             </motion.p>
 
-            {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,35 +119,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* ================= RIGHT IMAGE ================= */}
           <motion.div className='relative hidden lg:flex items-end justify-center h-175 -translate-y-35'>
-            {/* Blue glow behind person */}
-            {/* <div
-              className="
-                absolute
-                w-[420px]
-                h-[420px]
-                bg-blue-600/40
-                rounded-full
-                blur-[100px]
-                top-[180px]
-              "
-            /> */}
-
-            {/* Decorative blue ring */}
-            {/* <div
-              className="
-                absolute
-                w-[500px]
-                h-[500px]
-                border
-                border-blue-500/20
-                rounded-full
-                top-[130px]
-              "
-            /> */}
-
-            {/* Portrait */}
             <img
               src={portfolioData.profileImage}
               alt={portfolioData.name}
