@@ -43,7 +43,6 @@ const Academics = () => {
           </div>
         </motion.div>
 
-        {/* Year-wise Grid */}
         <div className='grid gap-8 md:grid-cols-3'>
           <TargetCursor
             spinDuration={2}
