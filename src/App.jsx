@@ -4,7 +4,7 @@ import WhatIDo from './components/WhatIDo'
 import Proficiency from './components/Proficiency'
 import Education from './components/Education'
 import Academics from './components/Academics'
-import Experience from './components/Experience'
+// import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
 import ContactForm from './components/ContactForm'
@@ -25,7 +25,7 @@ function App () {
           <Proficiency />
           <Education />
           <Academics />
-          <Experience />
+          {/* <Experience /> */}
           <Certificate />
           <Projects />
           <ContactForm />
