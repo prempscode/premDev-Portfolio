@@ -114,7 +114,7 @@ export const portfolioData = {
   // Projects
   projects: [
     {
-      id: "PROJ_002",
+      id: "PROJ_001",
       name: "Quillbox - A private study space for college notes",
       description:
         "Built as a real-world full-stack project: multi-user, permission-checked on every request, with files streamed through the backend so access control cannot be bypassed by editing a URL.",
